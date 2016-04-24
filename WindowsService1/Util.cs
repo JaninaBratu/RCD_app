@@ -9,6 +9,7 @@ namespace WindowsService1
 {
     class Util
     {
+
         public String getFileExtension(String file) {
 
             return Path.GetExtension(file).Trim('.');
@@ -19,16 +20,16 @@ namespace WindowsService1
             return !Directory.EnumerateFileSystemEntries(path).Any();
         }
 
-        public string renameFileName(string fileName)
+        public string renameFileName(string filePath)
         {
             int count = 0;
             string newFileName = "";
 
-            while (File.Exists(fileName))
+            if (File.Exists(filePath))
             {
-                newFileName = string.Concat(Path.GetFileNameWithoutExtension(fileName), count++);
+                newFileName = string.Concat(Path.GetFileNameWithoutExtension(filePath), count++);
             }
-            return Path.Combine(newFileName, Path.GetExtension(fileName));
+            return string.Concat(newFileName, Path.GetExtension(filePath));
         }
 
         public void deleteFile(string filePath)
@@ -39,16 +40,13 @@ namespace WindowsService1
                     {
                         File.Delete(filePath);
                     }
-                    
                 }
                 catch (System.IO.IOException e)
                 {
                     Console.WriteLine(e.Message);
                     return;
                 }
-               
         }
 
-        
     }
 }

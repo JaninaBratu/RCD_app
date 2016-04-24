@@ -28,13 +28,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2F97C6D496A20AACCE4062C5C1B93FDC"
+        "OwnerKey" = "8:_16F017E2DF2E4F57B917CF19904F4DB1"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_16F017E2DF2E4F57B917CF19904F4DB1"
+        "OwnerKey" = "8:_2F97C6D496A20AACCE4062C5C1B93FDC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -55,6 +55,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -71,6 +79,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -216,7 +240,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:WindowsServiceSetup"
         "ProductCode" = "8:{1E71A86E-D589-4256-B8C8-BDACB1831E78}"
-        "PackageCode" = "8:{7635EB5E-E4E9-4B16-9751-F21DE9A73161}"
+        "PackageCode" = "8:{2779226B-7FA2-44C4-8805-589C770A7143}"
         "UpgradeCode" = "8:{7E390FEB-7502-4A58-AF5F-AA6F6A416FBC}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -229,7 +253,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:WindowsServiceSetup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Netrom"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -737,7 +761,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_16F017E2DF2E4F57B917CF19904F4DB1"
             {
-            "SourcePath" = "8:..\\WindowsService1\\obj\\Release\\WindowsService1.exe"
+            "SourcePath" = "8:..\\WindowsService1\\obj\\Debug\\WindowsService1.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E5B78681B26E40ABA279E2C87A1EC8F0"
@@ -754,7 +778,7 @@
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
+            "ProjectOutputGroupRegister" = "3:2"
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{43E9D1B8-E141-4A7B-A154-270F47A28247}"

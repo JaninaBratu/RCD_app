@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
+using System.Timers;
+
 
 namespace WindowsService1
 {
+
     public partial class Service1 : ServiceBase
     {
         ScanFile scanFile = new ScanFile();
@@ -19,20 +15,40 @@ namespace WindowsService1
             InitializeComponent();
         }
 
-
         public void onDebug() {
             OnStart(null);
         }
 
-
         protected override void OnStart(string[] args)
         {
-           scanFile.processFile();
+            CronProcess();
         }
 
         protected override void OnStop()
         {
             System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStop.txt");
+        }
+
+        private void CronProcess()
+        {
+
+            System.Timers.Timer aTimer = new System.Timers.Timer();
+
+            // hook up the Elapsed event for the timer.
+            aTimer.Elapsed += scanProcess;
+
+            // set the Interval to 20 seconds (20000 milliseconds).
+            aTimer.Interval = 20000;
+
+            // have the timer fire repeated events (true is the default)
+            aTimer.AutoReset = true;
+            aTimer.Enabled = true;
+
+        }
+
+        private void scanProcess(object sender, ElapsedEventArgs e)
+        {
+            scanFile.processFile();
         }
     }
 }

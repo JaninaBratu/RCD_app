@@ -5,22 +5,26 @@ namespace WindowsService1
 {
     class ScanFile
     {
-        
+        private string shareFolderPath = "E:\\training";
 
         Util util = new Util();
+
+        public string sharedFolderPath { get; set; }
 
 
         #region processFile
         public void processFile()
         {
-            string shareFolderPath = "E:\\training";
+            
             string fileExtension = "";
             string file = "";
 
             try
             {
+                //verify to see if the path of the shareFolder exists
                 if (Directory.Exists(shareFolderPath))
                 {
+                    //in order to process the files from the shareFolder, we first need to see if there are any files to process
                     Boolean isEmpty = util.IsDirectoryEmpty(shareFolderPath);
                     if (!isEmpty)
                     {
@@ -68,17 +72,25 @@ namespace WindowsService1
                     equalName = checkFileName(file, destinationPath);
                     equalContent = checkContentFile(fullSourcePath, destinationPath);
 
+                    //if the name of the 2 files are equal and the content is not the same
+                    // first: rename the file
+                    //second: move the file
                      if (!isDirectoryEmpty && equalName && !equalContent)
                      {
-                            string updatedFileName = util.renameFileName(file);
+                            string updatedFileName = util.renameFileName(fullSourcePath);
                             fullDestinationPath = Path.Combine(destinationPath, updatedFileName);
                      }
+                     
+                     //if the name of the 2 files are the same and the content is also the same
+                     //delete the file
                     if (!isDirectoryEmpty && equalName && equalContent)
                     {
                         util.deleteFile(fullSourcePath);
                     }
 
                 }
+
+                //only if we have files in the source folder, we can move them to the specified one
                 if (!isDirectoryEmpty)
                 {
                     File.Move(fullSourcePath, fullDestinationPath);
@@ -109,6 +121,7 @@ namespace WindowsService1
         #region checkContentFile
         public Boolean checkContentFile(string fullSourcePath, string destinationPath)
         {
+            //comment? 
             foreach (string f in Directory.GetFiles(destinationPath))
             {
                 using (var reader1 = new FileStream(fullSourcePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))

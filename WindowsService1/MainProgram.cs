@@ -1,24 +1,24 @@
-﻿namespace WindowsService1
+﻿using System.ServiceProcess;
+
+namespace WindowsService1
 {
     static class MainProgram
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+
         static void Main()
         {
 
 
-            Service1 myService = new Service1();
+           Service1 myService = new Service1();
             myService.onDebug();
-            System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite); //keep the service alive
+           System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite); //keep the service alive
 
-            // ServiceBase[] ServicesToRun;
+          //   ServiceBase[] ServicesToRun;
             //   ServicesToRun = new ServiceBase[]
-            //    {
-            //       new Service1()
-            //   };      
-            //   ServiceBase.Run(ServicesToRun);
+              //  {
+                //   new Service1()
+               //};      
+               //ServiceBase.Run(ServicesToRun);
 
         }
         
