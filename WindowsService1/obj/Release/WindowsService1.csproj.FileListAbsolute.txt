@@ -12,3 +12,4 @@ E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\bin\Rele
 E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\bin\Release\WindowsService1.pdb
 E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Release\WindowsService1.ProjectInstaller.resources
 E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Release\WindowsService1.csproj.GenerateResource.Cache
+D:\microsoft\RCD_app\WindowsService1\bin\Release\WindowsService1.exe.config

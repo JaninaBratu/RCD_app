@@ -5,34 +5,28 @@ namespace WindowsService1
 {
     class ScanFile
     {
-        private string shareFolderPath = "E:\\training";
 
-        Util util = new Util();
-
-        public string sharedFolderPath { get; set; }
-
+        private string shareFolderPath = "D:\\source";
+        private string destinationFolderPath = "D:\\destination";
 
         #region processFile
         public void processFile()
         {
-            
-            string fileExtension = "";
-            string file = "";
-
             try
             {
                 //verify to see if the path of the shareFolder exists
                 if (Directory.Exists(shareFolderPath))
                 {
-                    //in order to process the files from the shareFolder, we first need to see if there are any files to process
-                    Boolean isEmpty = util.IsDirectoryEmpty(shareFolderPath);
-                    if (!isEmpty)
+                    // Get the list of files found in the directory.
+                    string[] scanFolderFiles = Directory.GetFiles(shareFolderPath);
+                    if (scanFolderFiles != null)
                     {
-                        foreach (string f in Directory.GetFiles(shareFolderPath))
+                        string fileName;
+                        foreach (string f in scanFolderFiles)
                         {
-                            file = Path.GetFileName(f);
-                            fileExtension = util.getFileExtension(file);
-                            processFolders(shareFolderPath, file, fileExtension);
+                            fileName = Path.GetFileName(f);
+                       
+                            processFolder(fileName);
                         }
                     }
                 }
@@ -45,55 +39,46 @@ namespace WindowsService1
         #endregion
 
 
-        #region processFolders
-        private void processFolders(string shareFolderPath, string file, string fileExtension)
+        #region processFolder
+        private void processFolder(string fileName)
         {
-            Boolean isDirectoryEmpty = false;
-            Boolean equalName = false;
+            string fileExtension = Util.getFileExtension(fileName);
             Boolean equalContent = false;
 
-            string fullSourcePath = Path.Combine(shareFolderPath, file);
+            string fullSourcePath = Path.Combine(shareFolderPath, fileName);
 
-            string destinationPath = Path.Combine(shareFolderPath, fileExtension);
-
-            string fullDestinationPath = Path.Combine(destinationPath, file);
-
+            string fullDestinationPath = Path.Combine(destinationFolderPath, fileExtension);
+            string updatedFileName = fileName;
             try {
 
+
                 //craete the directory if it not exist
-                if (!Directory.Exists(destinationPath))
+                if (!Directory.Exists(destinationFolderPath))
                 {
-                    Directory.CreateDirectory(destinationPath);
-                }
-
-                else
-                {
-                    isDirectoryEmpty = util.IsDirectoryEmpty(destinationPath);
-                    equalName = checkFileName(file, destinationPath);
-                    equalContent = checkContentFile(fullSourcePath, destinationPath);
-
-                    //if the name of the 2 files are equal and the content is not the same
-                    // first: rename the file
-                    //second: move the file
-                     if (!isDirectoryEmpty && equalName && !equalContent)
-                     {
-                            string updatedFileName = util.renameFileName(fullSourcePath);
-                            fullDestinationPath = Path.Combine(destinationPath, updatedFileName);
-                     }
-                     
-                     //if the name of the 2 files are the same and the content is also the same
-                     //delete the file
-                    if (!isDirectoryEmpty && equalName && equalContent)
+                    // Try to create the directory.
+                    try
                     {
-                        util.deleteFile(fullSourcePath);
+                        Directory.CreateDirectory(fullDestinationPath);
                     }
-
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("The directory couldn't been created : {0}", e.ToString());
+                    }
+                } else
+                {
+                    equalContent = checkContentFile(fullSourcePath, fullDestinationPath);
+                    updatedFileName = setFileName(fileName, fileExtension, fullDestinationPath);
+                    
                 }
 
-                //only if we have files in the source folder, we can move them to the specified one
-                if (!isDirectoryEmpty)
+                //if file is already in destination, delete it
+                if (equalContent == true)
                 {
-                    File.Move(fullSourcePath, fullDestinationPath);
+                    deleteFile(fullSourcePath);
+                } else 
+                {
+                    fullDestinationPath = Path.Combine(fullDestinationPath, updatedFileName);
+                    moveFile(fullSourcePath, fullDestinationPath);
                 }
             }
             catch (Exception ex)
@@ -104,24 +89,34 @@ namespace WindowsService1
         }
         #endregion
 
-
-        #region checkFileName
-        public Boolean checkFileName(string fileName, string destinationPath)
+        //Verify if is another file in the transition folder with the same name
+        private string setFileName(string fileName, string extension, string newFullPath)
         {
-            foreach(string f in Directory.GetFiles(destinationPath))
-                if (Path.GetFileName(fileName).Equals(Path.GetFileName(f)))
-                {
-                    return true;
-                }
-            return false;
+            int count = 0;
+
+            string tempFileName = Path.GetFileNameWithoutExtension(fileName);
+            string extensionWithDot = "." + extension;
+
+            string baseNewFullPath = newFullPath;
+            newFullPath = newFullPath + Path.DirectorySeparatorChar + tempFileName;
+         
+            //while there is a file with the same name
+            while (File.Exists(newFullPath + extensionWithDot))
+            {
+                //change the file name scanned
+                tempFileName = string.Format("{0}({1})", tempFileName, count++);
+                newFullPath = Path.Combine(baseNewFullPath, tempFileName);
+            }
+
+            return tempFileName + extensionWithDot;
         }
-        #endregion
+
 
 
         #region checkContentFile
         public Boolean checkContentFile(string fullSourcePath, string destinationPath)
         {
-            //comment? 
+         
             foreach (string f in Directory.GetFiles(destinationPath))
             {
                 using (var reader1 = new FileStream(fullSourcePath, System.IO.FileMode.Open, System.IO.FileAccess.Read))
@@ -167,5 +162,36 @@ namespace WindowsService1
         }
         #endregion
 
+        #region deleteFile()
+        //Delete the file
+        private void deleteFile(string filePath)
+        {
+            try
+            {
+                System.IO.File.Delete(filePath);
+            }
+            catch (Exception)
+            {
+                throw new FileNotFoundException("The file couldn't been deleted!");
+            }
+        }
+        #endregion
+
+
+        #region moveFile()
+        //Move the file
+        private void moveFile(string filePath, string movingPath)
+        {
+            try
+            {
+                //To move a file or folder to a new location:
+                File.Move(filePath, movingPath);
+            }
+            catch (Exception)
+            {
+                throw new FileNotFoundException("The file couldn't been moved!");
+            }
+        }
+        #endregion
     }
 }

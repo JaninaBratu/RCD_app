@@ -32,17 +32,17 @@ namespace WindowsService1
         private void CronProcess()
         {
 
-            System.Timers.Timer aTimer = new System.Timers.Timer();
+            System.Timers.Timer cronTimer = new System.Timers.Timer();
 
-            // hook up the Elapsed event for the timer.
-            aTimer.Elapsed += scanProcess;
+            // cron behaviour
+            cronTimer.Elapsed += scanProcess;
 
-            // set the Interval to 20 seconds (20000 milliseconds).
-            aTimer.Interval = 20000;
+            // set the Interval to 7 seconds (7000 milliseconds).
+            cronTimer.Interval = 7000;
 
-            // have the timer fire repeated events (true is the default)
-            aTimer.AutoReset = true;
-            aTimer.Enabled = true;
+
+            cronTimer.AutoReset = true;
+            cronTimer.Enabled = true;
 
         }
 
