@@ -1,0 +1,10 @@
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe.config
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\bin\Release\WindowsService1.pdb
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\obj\Release\WindowsService1.ProjectInstaller.resources
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\obj\Release\WindowsService1.csproj.GenerateResource.Cache
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\obj\Release\WindowsService1.exe
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\obj\Release\WindowsService1.pdb
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\bin\Release\WindowsService1.exe.config
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Release\WindowsService1.exe
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Release\WindowsService1.pdb

@@ -1,0 +1,16 @@
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe.config
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\bin\Debug\WindowsService1.pdb
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csprojResolveAssemblyReference.cache
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\obj\Debug\WindowsService1.exe
+c:\users\j.n.bratu\documents\visual studio 2015\Projects\WindowsService1\WindowsService1\obj\Debug\WindowsService1.pdb
+C:\Users\j.n.bratu\Documents\Visual Studio 2015\Projects\WindowsService1\WindowsService1\obj\Debug\WindowsService1.ProjectInstaller.resources
+C:\Users\j.n.bratu\Documents\Visual Studio 2015\Projects\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csproj.GenerateResource.Cache
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe.config
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\bin\Debug\WindowsService1.exe
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\bin\Debug\WindowsService1.pdb
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Debug\WindowsService1.ProjectInstaller.resources
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csproj.GenerateResource.Cache
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Debug\WindowsService1.exe
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Debug\WindowsService1.pdb
+E:\.Net Trainning\WorkspaceVisualStudio\WindowsService1\WindowsService1\obj\Debug\WindowsService1.csprojResolveAssemblyReference.cache
