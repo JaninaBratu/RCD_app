@@ -62,6 +62,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
         "Release"
@@ -238,9 +246,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:WindowsServiceSetup"
+        "ProductName" = "8:WindowsServiceSetupa"
         "ProductCode" = "8:{1E71A86E-D589-4256-B8C8-BDACB1831E78}"
-        "PackageCode" = "8:{2779226B-7FA2-44C4-8805-589C770A7143}"
+        "PackageCode" = "8:{97FD193C-E904-4B0B-BCFD-53564FD7565F}"
         "UpgradeCode" = "8:{7E390FEB-7502-4A58-AF5F-AA6F6A416FBC}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

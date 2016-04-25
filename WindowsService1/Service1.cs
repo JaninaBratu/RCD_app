@@ -31,19 +31,22 @@ namespace WindowsService1
 
         private void CronProcess()
         {
+#if DEBUG
 
+            scanFile.processFile();
+#else
             System.Timers.Timer cronTimer = new System.Timers.Timer();
 
             // cron behaviour
             cronTimer.Elapsed += scanProcess;
 
-            // set the Interval to 7 seconds (7000 milliseconds).
-            cronTimer.Interval = 7000;
+            // set the Interval to 10 seconds (10000 milliseconds).
+            cronTimer.Interval = 10000;
 
 
             cronTimer.AutoReset = true;
             cronTimer.Enabled = true;
-
+#endif
         }
 
         private void scanProcess(object sender, ElapsedEventArgs e)
