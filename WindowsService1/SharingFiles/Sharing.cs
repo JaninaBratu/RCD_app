@@ -39,14 +39,14 @@ namespace Netrom.WindowsService.SharingFiles
                 if (Directory.Exists(_sharedFolder))
                 {
                     //Get the list of files found in shared folder
-                    string[] sheredFiles = Directory.GetFiles(_sharedFolder);
+                    string[] sharedFiles = Directory.GetFiles(_sharedFolder);
 
                     //If folder is not empty
-                    if (sheredFiles != null)
+                    if (sharedFiles != null)
                     {
                         string fileName;
                         //Executing a loop through the files
-                        foreach (string filePath in sheredFiles)
+                        foreach (string filePath in sharedFiles)
                         {
                             fileName = Path.GetFileName(filePath);
 

@@ -21,7 +21,7 @@ namespace Netrom.WindowsService
 
         protected override void OnStart(string[] args)
         {
-            InitCron();
+            InitializeCron();
         }
 
         protected override void OnStop()
@@ -32,7 +32,7 @@ namespace Netrom.WindowsService
         /// <summary>
         /// Initialize the cron
         /// </summary>
-        private void InitCron()
+        private void InitializeCron()
         {
             new Cron();
         }

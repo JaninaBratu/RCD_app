@@ -13,7 +13,7 @@ namespace Netrom.WindowsService.SharingFiles
     /// </summary>
     public class Cron
     {
-        const int DEFAULT_INTERVAL = 1000; //the default interval is 10 seconds (10000 milliseconds)
+        const int DEFAULT_INTERVAL = 10000; //the default interval is 10 seconds (10000 milliseconds)
 
 #if !DEBUG
         private Timer _cron; //a Timer object, used for trigger the scan event depending on the specified range
