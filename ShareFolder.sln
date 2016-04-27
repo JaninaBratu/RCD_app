@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsService1", "WindowsService1\WindowsService1.csproj", "{43E9D1B8-E141-4A7B-A154-270F47A28247}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netrom.WindowsService", "WindowsService1\Netrom.WindowsService.csproj", "{43E9D1B8-E141-4A7B-A154-270F47A28247}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WindowsServiceSetup", "WindowsServiceSetup\WindowsServiceSetup.vdproj", "{52C5F040-6A06-4BB4-A53A-C8D5D4D5DFD8}"
 EndProject

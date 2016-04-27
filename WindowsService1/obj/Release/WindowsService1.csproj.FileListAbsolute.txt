@@ -19,3 +19,6 @@ D:\microsoft\RCD_app\WindowsService1\obj\Release\WindowsService1.ProjectInstalle
 D:\microsoft\RCD_app\WindowsService1\obj\Release\WindowsService1.csproj.GenerateResource.Cache
 D:\microsoft\RCD_app\WindowsService1\obj\Release\WindowsService1.exe
 D:\microsoft\RCD_app\WindowsService1\obj\Release\WindowsService1.pdb
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\bin\Release\WindowsService1.exe.config
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\obj\Release\WindowsService1.exe
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\obj\Release\WindowsService1.pdb

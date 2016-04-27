@@ -1,0 +1,7 @@
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\bin\Release\Netrom.WindowsService.exe.config
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\bin\Release\Netrom.WindowsService.exe
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\bin\Release\Netrom.WindowsService.pdb
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\obj\Release\WindowsService1.ProjectInstaller.resources
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\obj\Release\Netrom.WindowsService.csproj.GenerateResource.Cache
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\obj\Release\Netrom.WindowsService.exe
+E:\.Net Trainning\WorkspaceVisualStudio\RCD_app\WindowsService1\obj\Release\Netrom.WindowsService.pdb

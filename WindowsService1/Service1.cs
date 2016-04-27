@@ -1,57 +1,41 @@
-﻿using System;
+﻿using Netrom.WindowsService.SharingFiles;
+using System;
 using System.ServiceProcess;
 using System.Timers;
 
 
-namespace WindowsService1
+namespace Netrom.WindowsService
 {
 
     public partial class Service1 : ServiceBase
     {
-        ScanFile scanFile = new ScanFile();
 
         public Service1()
         {
             InitializeComponent();
         }
 
-        public void onDebug() {
+        public void OnDebug() {
             OnStart(null);
         }
 
         protected override void OnStart(string[] args)
         {
-            CronProcess();
+            InitCron();
         }
 
         protected override void OnStop()
         {
-            System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStop.txt");
+            //System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "OnStop.txt");
         }
 
-        private void CronProcess()
+        /// <summary>
+        /// Initialize the cron
+        /// </summary>
+        private void InitCron()
         {
-#if DEBUG
-
-            scanFile.processFile();
-#else
-            System.Timers.Timer cronTimer = new System.Timers.Timer();
-
-            // cron behaviour
-            cronTimer.Elapsed += scanProcess;
-
-            // set the Interval to 10 seconds (10000 milliseconds).
-            cronTimer.Interval = 10000;
-
-
-            cronTimer.AutoReset = true;
-            cronTimer.Enabled = true;
-#endif
+            new Cron();
         }
 
-        private void scanProcess(object sender, ElapsedEventArgs e)
-        {
-            scanFile.processFile();
-        }
     }
 }

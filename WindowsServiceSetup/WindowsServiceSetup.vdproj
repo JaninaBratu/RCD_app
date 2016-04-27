@@ -246,7 +246,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:WindowsServiceSetupa"
+        "ProductName" = "8:Sharing"
         "ProductCode" = "8:{1E71A86E-D589-4256-B8C8-BDACB1831E78}"
         "PackageCode" = "8:{97FD193C-E904-4B0B-BCFD-53564FD7565F}"
         "UpgradeCode" = "8:{7E390FEB-7502-4A58-AF5F-AA6F6A416FBC}"
@@ -256,7 +256,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Netrom"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:WindowsServiceSetup"
@@ -769,7 +769,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_16F017E2DF2E4F57B917CF19904F4DB1"
             {
-            "SourcePath" = "8:..\\WindowsService1\\obj\\Debug\\WindowsService1.exe"
+            "SourcePath" = "8:..\\WindowsService1\\obj\\Release\\Netrom.WindowsService.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_E5B78681B26E40ABA279E2C87A1EC8F0"

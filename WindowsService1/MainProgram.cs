@@ -1,6 +1,6 @@
 ﻿using System.ServiceProcess;
 
-namespace WindowsService1
+namespace Netrom.WindowsService
 {
     static class MainProgram
     {
@@ -10,7 +10,7 @@ namespace WindowsService1
 
 #if DEBUG
         Service1 myService = new Service1();
-        myService.onDebug();
+        myService.OnDebug();
         System.Threading.Thread.Sleep(System.Threading.Timeout.Infinite); //keep the service alive
 #else
         ServiceBase[] ServicesToRun;
